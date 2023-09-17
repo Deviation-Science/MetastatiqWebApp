@@ -45,8 +45,8 @@ const NavBar = () => {
 
 				<div
 					className={clsx(
-						"hidden text-black w-[55%] tracking-wider mr-5",
-						"lg:flex justify-between lg:text-xl lg:font-light"
+						"hidden text-black/50 w-[40%] tracking-wider mr-5",
+						"lg:flex justify-between lg:text-base lg:font-semibold"
 					)}
 				>
 					<p

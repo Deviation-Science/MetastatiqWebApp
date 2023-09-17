@@ -9,6 +9,7 @@ const Problem = () => {
 	const [show, setShow] = useState({
 		problemOne: false,
 		problemTwo: false,
+		problemThree: false,
 	});
 
 	console.log("intersecting", intersecting);
@@ -33,30 +34,64 @@ const Problem = () => {
 				...prevState,
 				problemTwo: true,
 			}));
+			setTimeout(() => {
+				setShow((prevState) => ({
+					...prevState,
+					problemThree: true,
+				}));
+			}, 2000);
 		}, 2000);
 	}, [intersecting]);
 
 	return (
 		<div
 			ref={ref}
-			className="h-full w-full flex justify-center items-center overflow-hidden relative"
+			className={clsx(
+				"h-full w-full flex flex-col justify-center items-start relative text-sm pl-32",
+				"lg:text-2xl"
+			)}
 		>
-			<p
-				className={clsx(
-					"absolute top-5 left-5 translate-x-full",
-					show.problemOne && "translate-x-0"
-				)}
-			>
-				HELLO 1
-			</p>
-			<p
-				className={clsx(
-					"absolute top-10 left-10 translate-x-full",
-					show.problemTwo && "translate-x-0"
-				)}
-			>
-				HELLO 2
-			</p>
+			<p className="lg:text-6xl font-bold">Can you relate?</p>
+			<div className="mt-10">
+				<p
+					className={clsx(
+						"w-fit text-center py-5",
+						show.problemOne && "translate-x-0 opacity-100"
+					)}
+				>
+					<span className={clsx("font-bold text-2xl", "lg:text-4xl")}>
+						Are you,{" "}
+					</span>
+					at the mercy of the neighbourhood ‘college-gate wale
+					bhaiyya’ who completes one thesis per day?
+				</p>
+
+				<p
+					className={clsx(
+						"w-fit text-center py-5",
+						show.problemOne && "translate-x-0 opacity-100"
+					)}
+				>
+					<span className={clsx("font-bold text-2xl", "lg:text-4xl")}>
+						Are you,{" "}
+					</span>
+					dependent on your unmotivated (read: unincentivized) “PSM
+					wala friend” who is yet to complete his MD?
+				</p>
+
+				<p
+					className={clsx(
+						"w-fit text-center py-5",
+						show.problemOne && "translate-x-0 opacity-100"
+					)}
+				>
+					<span className={clsx("font-bold text-2xl", "lg:text-4xl")}>
+						Are you,{" "}
+					</span>
+					taking the reigns in your own hands and learning to
+					horse-ride watching YouTube videos?
+				</p>
+			</div>
 		</div>
 	);
 };

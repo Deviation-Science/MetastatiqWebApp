@@ -1,4 +1,4 @@
-import { Problem } from "@/components";
+import { Problem, Solution } from "@/components";
 
 export default function Home() {
 	return (
@@ -11,9 +11,19 @@ export default function Home() {
 				className="pt-[100px]"
 			/>
 
+			<div className="w-full h-2 bg-creamLogo rounded-[50%]" />
+
 			<section className="h-[600px] bg-black text-white">
 				<Problem />
 			</section>
+
+			<div className="w-full h-2 bg-creamLogo rounded-[50%]" />
+
+			<section className="h-fit bg-black text-white">
+				<Solution />
+			</section>
+
+			<div className="w-full h-2 bg-creamLogo rounded-[50%]" />
 		</main>
 	);
 }
